@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import { effectTypes } from 'redux-saga/effects';
 import contractSaga from '../../redux/sagas/contract.saga';
 
 function ContractDetails() {
+  
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const contractDetails = useSelector()
+  const {contractId} = useParams();
+
+  useEffect(() => {
+    dispatch({ type: 'FETCH_CONTRACT_DETAILS', payload: contractId })
+  })
 
 //   const formatDate = (dateString) => {
 //     const date = new Date(dateString);
@@ -33,7 +43,7 @@ function ContractDetails() {
 
         <h3>Item Description :  </h3>
           <p>Fender Stratocaster 60s Road Worn 6 String Electric Guitar</p>
-          
+
         <h3>Item Prices : </h3>
           <p>$799.99</p>
 
