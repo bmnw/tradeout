@@ -21,7 +21,7 @@ function Dashboard() {
 
         <h2>Your Accepted Contracts</h2>
 
-        <button onClick={() => {history.push(`/create-contract-details`)}}>New Contract</button>
+        <button onClick={() => {history.push(`/party-type`)}}>New Contract</button>
 
         <Card sx={{ maxWidth: 345 }}>
           <CardActionArea>
