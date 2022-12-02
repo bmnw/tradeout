@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import ContractPreview from '../ContractPreview/ContractPreview';
 
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box'
+
 function RecipientView() {
   const dispatch = useDispatch();
+  const history =  useHistory();
   // client-side URL param, corresponds to route exact path in App.jsx
   const { searchContractKey } = useParams();
   const contractDetails = useSelector(store => store.contract.selectedContract)
@@ -18,6 +23,25 @@ function RecipientView() {
     <div>
       <h1>RecipientView</h1>
       <ContractPreview contractDetails={contractDetails} />
+        <div>
+          <br></br>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Button 
+              variant="contained"
+              onClick={(event) => history.push('/registration')}
+              sx={{marginLeft: 1, width: 200}}
+              >
+              Accept
+            </Button>
+            <Button 
+              variant="contained"
+              // onClick={(event) => history.push('/registration')}
+              sx={{marginLeft: 1, width: 200}}
+              >
+              Decline
+            </Button>
+          </Box>
+        </div>
     </div>
   );
 }
