@@ -14,6 +14,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import SendIcon from '@mui/icons-material/Send';
 import SummarizeIcon from '@mui/icons-material/Summarize';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import Alert from '@mui/material';
 
 const SendToRecipient = () => {
 
@@ -70,7 +71,7 @@ const SendToRecipient = () => {
   // autofill email for demo purposes
   const autofillEmail = () => {
     console.log('in autofillEmail');
-    dispatch({type: 'SET_NEW_CONTRACT_DETAILS', payload: {...newContractDetails, second_party_email: 'christmascactus@gmail.com'}});
+    dispatch({type: 'SET_NEW_CONTRACT_DETAILS', payload: {...newContractDetails, second_party_email: 'jackjackg42@gmail.com'}});
   }
 
   return (
